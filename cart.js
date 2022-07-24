@@ -33,9 +33,17 @@ const cart = [
     }
 ]
 
-//CODE HERE
+// let total = cart.reduce(function (acc, obj) {
+//     return acc + obj.price
+// })
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+
+
+const summedPrice = cart.reduce(function (acc, obj) {
+    return acc + obj.price;
+}, 0)
+
+console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -52,8 +60,13 @@ const cart = [
     Note: the numbers passed in for `tax` will be
     decimals, for example: .06 for a 6% tax.
 */
+console.log('Problem 2');
 
-//CODE HERE
+function calcFinalPrice (cartTotal, couponValue, tax) {
+    const taxedAmt = cartTotal * tax
+    return cartTotal + taxedAmt - couponValue
+}
+console.log(calcFinalPrice(50,5,.06));
 
 
 
@@ -75,16 +88,16 @@ const cart = [
     and why you chose those data types. 
 
     Your object should have at least 4 properties. 
-*/
+    */
+    // Chose firstName and lastName as properties so the restaraunt can find the idividual
+    // Chose id so customer can find their order with their order id 
+    // Chose phoneNumber as properties for contact information
 
-/*
-    TEXT ANSWER HERE
-
-*/
-
-/*
-    Now, create a customer object following your own
-    guidelines.
-*/
-
-//CODE HERE
+const customer = [
+    {
+        firstName: 'Jimmy',
+        lastName: 'Brown',
+        id: 12345,
+        phoneNumber: 1234567891,
+    }
+]

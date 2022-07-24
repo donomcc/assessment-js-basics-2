@@ -20,8 +20,11 @@
     argument, `greetUser` should return the string:
     'Welcome back, Andrew'
 */
+const greetUser = (username) => {
+    console.log(`Welcome back, ${username}`); 
+}
 
-
+greetUser("chad")
 
 
 
@@ -48,7 +51,16 @@
 
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-//CODE HERE
+const canWeDeliver = zipCode => {
+    if (deliveryAreaZipCodes.includes(zipCode)){
+        console.log("You're in our delivery zone!");
+    }
+    else {
+        console.log("Sorry, we can't deliver to that address.");
+    }
+}
+
+canWeDeliver(12345)
 
 
 
@@ -69,7 +81,18 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
     Name your new function `canWeDeliverTwo`.
 */
 
-// CODE HERE
+console.log('Problem 2 Continued');
+
+const canWeDeliverTwo = (zipCode) => {
+    for(let zip of deliveryAreaZipCodes){
+        if(zip === zipCode){
+            return "You're in our delivery zone!"
+        }
+    }  
+    return "Sorry, we can't deliver to that address" 
+}
+
+console.log(canWeDeliverTwo(85205));
 
 
 //////////////////PROBLEM 3////////////////////
@@ -104,9 +127,29 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
+// function changeTitle(arr){
+//     let newTitle = arr[0].title.replace('15% Off!', '10% Off!')
+//     console.log(newTitle);
+// }
+// changeTitle(deals)
+// console.log(deals);
 
-//CODE HERE
+// const newTitle = deals[0].title.replace('15% Off!','10% Off!')
 
+
+// function changeTitle (arr, string) {
+//     arr[0].title = string;
+//     return arr
+// }
+
+// console.log(changeTitle(deals, '10% Off!'));
+
+function changeTitle(arr) {
+    arr[0].title = arr[0].title.replace('15% Off!', '10% Off!')
+    return arr
+}
+
+console.log(changeTitle(deals));
 
 
 /*
@@ -122,4 +165,10 @@ const deals = [
     to be displaying wrong on the live site.
 */
 
-//CODE HERE
+function replaceMonth (arr, string) {
+    arr[1].desc = arr[1].desc.replace('March', `${string}`)
+    arr[1].desc = arr[1].desc.trim()
+    return arr
+    // console.log(arr);
+}
+console.log(replaceMonth(deals,'April'));
